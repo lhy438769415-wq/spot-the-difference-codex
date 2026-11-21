@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Second Look — The Field Archive</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./src/main.js"></script>
+</head>
+<body>
+<main id="archive">
+  <header class="masthead">
+    <div class="brand"><span class="seal" aria-hidden="true">◉</span> Second Look</div>
+    <div class="edition">THE FIELD ARCHIVE <span> / </span> VOL. 01</div>
+    <button id="sound" aria-pressed="true">Sound on</button>
+  </header>
+  <section id="game" hidden aria-label="Compare the two prints">
+    <div class="brief">
+      <div>
+        <div id="chapter" class="eyebrow"></div>
+        <h1 id="level"></h1>
+      </div>
+      <div class="metrics">
+        <div class="metric"><span class="eyebrow">REMAINING</span><strong><span id="remaining">07</span><small> / 07</small></strong></div>
+        <div class="metric clock"><span class="eyebrow">TIME LEFT</span><strong id="time">02:00</strong><div class="track"><div id="timeBar"></div></div></div>
+      </div>
+    </div>
+    <div id="panels" class="panels">
+      <figure><figcaption><span>PRINT A</span> FIELD ORIGINAL</figcaption><canvas id="left" width="552" height="388" aria-label="Original illustration"></canvas></figure>
+      <figure><figcaption><span>PRINT B</span> ALTERED COPY</figcaption><canvas id="right" width="552" height="388" aria-label="Altered illustration"></canvas></figure>
+    </div>
+    <div class="toolbar">
+      <div class="progress"><div id="marks" aria-hidden="true"></div><span id="status" role="status"></span></div>
+      <div class="actions"><button id="hint"><kbd>H</kbd> Hint <span id="hintCount"></span></button><button id="pause"><kbd>P</kbd> Pause</button></div>
+    </div>
+  </section>
+  <section id="intro" class="intro">
+    <div class="pitch">
+      <div class="eyebrow">THE FIELD ARCHIVE · VOL. 01</div>
+      <h1>Second<br><em>Look.</em></h1>
+      <p>Two prints of every place. Seven details changed in each copy. Look closely before time runs out.</p>
+      <button class="primary" id="start">Open the archive <span aria-hidden="true">↗</span></button>
+    </div>
+    <div class="cover">
+      <div class="coverPrint"><canvas id="cover" width="552" height="388" aria-label="Illustration of a train at dusk"></canvas></div>
+      <div class="coverCaption"><b>01 / 03</b> The Night Train <span>FIELD PRINT</span></div>
+    </div>
+  </section>
+  <footer><span>CLICK EITHER PRINT TO MARK A DIFFERENCE</span><span><kbd>↑ ↓ ← →</kbd> MOVE <kbd>SPACE</kbd> MARK <kbd>H</kbd> HINT <kbd>P</kbd> PAUSE</span></footer>
+</main>
+<dialog id="overlay" aria-labelledby="overlayTitle">
+  <div id="overlayNote" class="eyebrow"></div>
+  <h2 id="overlayTitle"></h2>
+  <p id="overlayText"></p>
+  <div id="scorecard" hidden><div><span class="eyebrow">TOTAL SCORE</span><strong id="total"></strong></div><div><span class="eyebrow">BEST SCORE</span><strong id="best"></strong></div></div>
+  <button class="primary" id="continue"></button>
+</dialog>
+</body>
+</html>
